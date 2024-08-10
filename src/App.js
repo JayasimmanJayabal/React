@@ -5,6 +5,7 @@ const App = () => {
   const handleStop = (recordedBlob) => {
     console.log('recordedBlob is: ', recordedBlob);
     // Upload the blob to your backend here
+    
   };
 
   return (
