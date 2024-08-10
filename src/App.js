@@ -1,14 +1,18 @@
-// src/App.js
 import React from 'react';
-import AudioRecorder from './components/AudioRecorder';
+import Recorder from './components/AudioRecorder';
 
-function App() {
+const App = () => {
+  const handleStop = (recordedBlob) => {
+    console.log('recordedBlob is: ', recordedBlob);
+    // Upload the blob to your backend here
+  };
+
   return (
     <div className="App">
-      <h1>Audio Recorder</h1>
-      <AudioRecorder />
+      <h1>Audio Recording and Uploading App</h1>
+      <Recorder onStop={handleStop} />
     </div>
   );
-}
+};
 
 export default App;

@@ -1,18 +1,30 @@
-import React from 'react';
-import { ReactMediaRecorder } from 'react-media-recorder';
+import React, { useState } from 'react';
+import { ReactMic } from 'react-mic';
 
-const AudioRecorder = () => (
-  <ReactMediaRecorder
-    audio
-    render={({ status, startRecording, stopRecording, mediaBlobUrl }) => (
-      <div>
-        <p>{status}</p>
-        <button onClick={startRecording}>Start Recording</button>
-        <button onClick={stopRecording}>Stop Recording</button>
-        <audio src={mediaBlobUrl} controls />
-      </div>
-    )}
-  />
-);
+const AudioRecorder = ({ onStop }) => {
+  const [recording, setRecording] = useState(false);
+
+  const startRecording = () => {
+    setRecording(true);
+  };
+
+  const stopRecording = () => {
+    setRecording(false);
+  };
+
+  return (
+    <div>
+      <ReactMic
+        record={recording}
+        className="sound-wave"
+        onStop={onStop}
+        strokeColor="#000000"
+        backgroundColor="#FF4081"
+      />
+      <button onClick={startRecording}>Start Recording</button>
+      <button onClick={stopRecording}>Stop Recording</button>
+    </div>
+  );
+};
 
 export default AudioRecorder;
