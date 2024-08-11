@@ -1,4 +1,3 @@
-// src/AudioRecorder.js
 import React, { useState } from 'react';
 import { useReactMediaRecorder } from "react-media-recorder";
 import AWS from 'aws-sdk';
@@ -11,11 +10,11 @@ const AudioRecorder = () => {
 
   const uploadAudio = async (blob) => {
     setUploading(true);
-    // AWS S3 Configuration
     AWS.config.update({
-      region: 'your-region',
+      region: 'us-east-1',
       credentials: new AWS.CognitoIdentityCredentials({
-        IdentityPoolId: 'your-identity-pool-id',
+        //pool id
+        IdentityPoolId: 'us-east-1_wSIZ6PatW',
       }),
     });
 
@@ -23,7 +22,7 @@ const AudioRecorder = () => {
     const fileName = `audio_${Date.now()}.wav`;
 
     const params = {
-      Bucket: 'your-s3-bucket-name',
+      Bucket: 'audio-save', //bucket s3
       Key: fileName,
       Body: blob,
       ContentType: 'audio/wav',
