@@ -1,25 +1,3 @@
-// import { CognitoUserPool } from 'amazon-cognito-identity-js';
-
-// const poolData = {
-//   UserPoolId: 'us-east-1_wSIZ6PatW',
-//   ClientId: '41f7nq8s0d4spgq8vq9c9hpd7r',
-// };
-
-// const userPool = new CognitoUserPool(poolData);
-
-// export const signUp = (username, password, email) => {
-//   userPool.signUp(username, password, [{ Name: 'email', Value: email }], null, (err, result) => {
-//     if (err) {
-//       console.error('Signup Error:', err);
-//       return;
-//     }
-//     console.log('Signup Success:', result);
-//   });
-// };
-
-// export const login = (username, password) => {
-//   // Add logic to handle login using Cognito
-// };
 import { CognitoUserPool, CognitoUser, AuthenticationDetails } from 'amazon-cognito-identity-js';
 
 const poolData = {

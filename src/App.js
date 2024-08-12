@@ -1,5 +1,5 @@
 import React from 'react';
-import AudioRecorder from './AudioRecorder';
+import AudioRecorder from './components/AudioRecorder';
 
 function App() {
   return (
