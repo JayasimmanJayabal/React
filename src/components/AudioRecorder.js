@@ -52,7 +52,7 @@ const AudioRecorder = () => {
       }
     }
   };
-
+  //return
   return (
     <div>
       <button onClick={startRecording}>Start Recording</button>
